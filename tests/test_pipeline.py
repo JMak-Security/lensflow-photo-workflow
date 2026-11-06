@@ -60,7 +60,7 @@ def test_exif_orientation_is_applied_and_metadata_removed(tmp_path: Path) -> Non
 
     assert manifest["images"][0]["source_dimensions"] == [20, 10]
     assert manifest["images"][0]["output_dimensions"] == [10, 20]
-    exported = Image.open(tmp_path / "out" / "exports" / "image_001.jpg")
+    exported = Image.open(tmp_path / "out" / "exports" / "asset_001.jpg")
     assert exported.getexif().get(274) is None
     exported.close()
 
